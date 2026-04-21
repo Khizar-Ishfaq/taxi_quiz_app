@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taksinkuljettajan Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Harjoituskoe</p>
+        <h1>Taksinkuljettajan Quiz App</h1>
+        <p class="subtitle">50 kysymystä asiakaspalvelusta, turvallisuudesta, esteettömyydestä ja taksinkuljettajan velvollisuuksista.</p>
+      </div>
+      <button id="restartTop" class="ghost">Aloita alusta</button>
+    </section>
+
+    <section class="panel start-screen" id="startScreen">
+      <h2>Valmis harjoittelemaan?</h2>
+      <p>Vastaa kysymyksiin yksi kerrallaan. Lopussa näet pisteet ja voit kerrata väärät vastaukset.</p>
+      <div class="settings">
+        <label class="toggle">
+          <input type="checkbox" id="shuffleToggle" checked />
+          <span>Sekoita kysymykset</span>
+        </label>
+      </div>
+      <button id="startBtn" class="primary">Aloita quiz</button>
+    </section>
+
+    <section class="panel quiz-screen hidden" id="quizScreen">
+      <div class="progress-row">
+        <span id="questionCounter">Kysymys 1 / 50</span>
+        <span id="scoreBadge">Pisteet: 0</span>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <div id="progressFill"></div>
+      </div>
+      <h2 id="questionText"></h2>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback"></p>
+      <div class="actions">
+        <button id="nextBtn" class="primary" disabled>Seuraava</button>
+      </div>
+    </section>
+
+    <section class="panel result-screen hidden" id="resultScreen">
+      <h2>Tulos</h2>
+      <p id="finalScore" class="final-score"></p>
+      <p id="finalMessage"></p>
+      <div class="actions wrap">
+        <button id="reviewBtn" class="ghost">Näytä väärät vastaukset</button>
+        <button id="restartBtn" class="primary">Tee uudelleen</button>
+      </div>
+      <div id="reviewList" class="review-list hidden"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
